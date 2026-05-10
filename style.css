@@ -1,18 +1,21 @@
 :root {
-  --rose-100: #f8f6ff; /* subtle light lilac base (kept var name for compatibility) */
-  --rose-200: #f1eaff;
-  --rose-300: #e5dbff;
-  --rose-500: #9b6bd8; /* primary purple */
-  --rose-700: #6b3fa8; /* deeper purple accent */
-  --cream-100: #fffaf1;
-  --gold-300: #bfa0ff; /* soft lavender-gold replacement */
-  --gold-500: #a07fe6;
-  --ink-900: #2f2330;
-  --ink-700: #4e3a4a;
-  --glass: rgba(255, 255, 255, 0.42);
-  --glass-border: rgba(255, 255, 255, 0.5);
-  --shadow-soft: 0 18px 50px rgba(93, 60, 108, 0.12);
-  --shadow-hover: 0 22px 60px rgba(86, 45, 121, 0.18);
+  --rose-100: #f5f0ff; /* subtle light lilac base (kept var name for compatibility) */
+  --rose-200: #ebe3ff;
+  --rose-300: #dcc9ff;
+  --rose-500: #8b4fd5; /* vibrant primary purple */
+  --rose-700: #5a2b96; /* deeper rich purple accent */
+  --rose-accent: #e74c9f; /* rose-magenta pop */
+  --cream-100: #fffbf8;
+  --gold-300: #d8a8ff; /* vibrant lavender */
+  --gold-500: #b88fff;
+  --ink-900: #2a1f2d;
+  --ink-700: #4a3653;
+  --glass: rgba(255, 255, 255, 0.45);
+  --glass-border: rgba(255, 255, 255, 0.6);
+  --shadow-soft: 0 18px 50px rgba(139, 79, 213, 0.18);
+  --shadow-hover: 0 28px 70px rgba(139, 79, 213, 0.28);
+  --glow-sm: 0 0 24px rgba(139, 79, 213, 0.35);
+  --glow-lg: 0 0 48px rgba(231, 76, 159, 0.24);
   --radius-lg: 28px;
   --radius-md: 18px;
 }
@@ -35,9 +38,9 @@ body {
   font-family: "Manrope", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: var(--ink-900);
   background:
-    radial-gradient(1300px 600px at 12% -10%, #f6f0ff 0%, transparent 60%),
-    radial-gradient(900px 500px at 88% -15%, #faf6ff 0%, transparent 60%),
-    linear-gradient(180deg, #fbf8ff 0%, #f3ecff 45%, #f9f6ff 100%);
+    radial-gradient(1300px 600px at 12% -10%, #f0e5ff 0%, transparent 60%),
+    radial-gradient(900px 500px at 88% -15%, #fdf3ff 0%, transparent 60%),
+    linear-gradient(180deg, #faf6ff 0%, #efe5ff 45%, #f8f4ff 100%);
   line-height: 1.65;
   overflow-x: hidden;
 }
@@ -75,8 +78,9 @@ body {
   height: 580px;
   left: -170px;
   top: -150px;
-  background: radial-gradient(circle at 35% 35%, #efe6ff 0%, #d6bff8 65%, transparent 100%);
+  background: radial-gradient(circle at 35% 35%, #e8d4ff 0%, #c794f5 65%, transparent 100%);
   animation: drift 14s ease-in-out infinite alternate;
+  filter: drop-shadow(0 0 30px rgba(139, 79, 213, 0.4));
 }
 
 .hero::after {
@@ -84,8 +88,9 @@ body {
   height: 520px;
   right: -120px;
   bottom: -180px;
-  background: radial-gradient(circle at 60% 40%, #f4eaff 0%, #dbc3ff 62%, transparent 100%);
+  background: radial-gradient(circle at 60% 40%, #ead8ff 0%, #d5a8ff 62%, transparent 100%);
   animation: drift 16s ease-in-out infinite alternate-reverse;
+  filter: drop-shadow(0 0 28px rgba(175, 100, 220, 0.35));
 }
 
 .hero-overlay {
@@ -136,7 +141,14 @@ h1 {
   font-size: clamp(2.8rem, 7.8vw, 6.2rem);
   line-height: 0.95;
   margin: 0.9rem 0 1.15rem;
-  text-shadow: 0 6px 30px rgba(88, 41, 58, 0.14);
+  text-shadow: 
+    0 6px 30px rgba(90, 43, 150, 0.2),
+    0 0 40px rgba(139, 79, 213, 0.25),
+    0 0 60px rgba(231, 76, 159, 0.12);
+  background: linear-gradient(135deg, #5a2b96, #8b4fd5, #d8a8ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .subtitle {
@@ -162,27 +174,45 @@ h1 {
   padding: 0.98rem 1.8rem;
   font-size: 1.02rem;
   color: #fff;
-  background: linear-gradient(120deg, #a67be6 0%, #7f54d1 42%, #653bb8 100%);
-  box-shadow: 0 16px 34px rgba(101, 62, 145, 0.28);
+  background: linear-gradient(120deg, #8b4fd5 0%, #6b38b5 42%, #5a2b96 100%);
+  box-shadow: 
+    0 16px 34px rgba(90, 43, 150, 0.4),
+    0 0 30px rgba(139, 79, 213, 0.35);
+  position: relative;
 }
 
 .btn-secondary {
   padding: 0.9rem 1.7rem;
   font-size: 1rem;
-  color: #fff9f5;
-  background: linear-gradient(115deg, #d6b5ff 0%, #be98f0 60%, #a77ee6 100%);
-  box-shadow: 0 14px 30px rgba(119, 83, 179, 0.2);
+  color: #fff;
+  background: linear-gradient(115deg, #e74c9f 0%, #d8a8ff 50%, #b88fff 100%);
+  box-shadow: 
+    0 14px 30px rgba(231, 76, 159, 0.32),
+    0 0 24px rgba(175, 100, 220, 0.28);
+  position: relative;
 }
 
 .btn-primary:hover,
 .btn-secondary:hover {
-  transform: translateY(-2px) scale(1.02);
-  filter: saturate(1.03);
+  transform: translateY(-3px) scale(1.04);
+  filter: saturate(1.1) brightness(1.08);
+}
+
+.btn-primary:hover {
+  box-shadow: 
+    0 20px 40px rgba(90, 43, 150, 0.5),
+    0 0 40px rgba(139, 79, 213, 0.45);
+}
+
+.btn-secondary:hover {
+  box-shadow: 
+    0 20px 40px rgba(231, 76, 159, 0.4),
+    0 0 36px rgba(231, 76, 159, 0.35);
 }
 
 .btn-primary:active,
 .btn-secondary:active {
-  transform: translateY(0);
+  transform: translateY(-1px);
 }
 
 .message-section {
@@ -194,10 +224,13 @@ h1 {
   margin: 0 auto;
   padding: clamp(1.4rem, 3.4vw, 2.9rem);
   border-radius: var(--radius-lg);
-  background: linear-gradient(145deg, rgba(255, 255, 255, 0.7), rgba(255, 247, 243, 0.5));
-  border: 1px solid var(--glass-border);
-  backdrop-filter: blur(8px);
-  box-shadow: var(--shadow-soft);
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.75), rgba(248, 240, 255, 0.55));
+  border: 1.5px solid rgba(139, 79, 213, 0.3);
+  backdrop-filter: blur(10px);
+  box-shadow: 
+    var(--shadow-soft),
+    inset 0 1px 2px rgba(255, 255, 255, 0.8),
+    0 0 30px rgba(139, 79, 213, 0.12);
 }
 
 .message-card h2 {
@@ -227,24 +260,32 @@ h1 {
   grid-column: span 4;
   padding: 1.25rem 1.1rem;
   border-radius: var(--radius-md);
-  background: var(--glass);
-  border: 1px solid rgba(255, 255, 255, 0.55);
-  backdrop-filter: blur(7px);
-  box-shadow: 0 10px 24px rgba(117, 71, 84, 0.12);
-  transition: transform 240ms ease, box-shadow 240ms ease, border-color 240ms ease;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.5), rgba(245, 240, 255, 0.4));
+  border: 1.5px solid rgba(139, 79, 213, 0.25);
+  backdrop-filter: blur(10px);
+  box-shadow: 
+    0 10px 24px rgba(139, 79, 213, 0.12),
+    0 0 20px rgba(139, 79, 213, 0.08);
+  transition: transform 240ms ease, box-shadow 240ms ease, border-color 240ms ease, background 240ms ease;
 }
 
 .reason-card p {
   margin: 0;
   text-align: center;
   font-weight: 600;
-  color: #573c45;
+  background: linear-gradient(135deg, #5a2b96, #8b4fd5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .reason-card:hover {
-  transform: translateY(-7px);
-  box-shadow: var(--shadow-hover);
-  border-color: rgba(179, 125, 227, 0.7);
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 
+    var(--shadow-hover),
+    0 0 32px rgba(139, 79, 213, 0.25);
+  border-color: rgba(139, 79, 213, 0.6);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.62), rgba(232, 212, 255, 0.45));
 }
 
 .surprise-section {
@@ -255,9 +296,11 @@ h1 {
   text-align: center;
   padding: clamp(1.5rem, 4vw, 2.5rem);
   border-radius: var(--radius-lg);
-  background: linear-gradient(140deg, rgba(255, 248, 245, 0.66), rgba(255, 255, 255, 0.5));
-  border: 1px solid var(--glass-border);
-  box-shadow: var(--shadow-soft);
+  background: linear-gradient(140deg, rgba(245, 240, 255, 0.72), rgba(255, 255, 255, 0.55));
+  border: 1.5px solid rgba(139, 79, 213, 0.3);
+  box-shadow: 
+    var(--shadow-soft),
+    0 0 36px rgba(139, 79, 213, 0.15);
   position: relative;
   overflow: hidden;
 }
@@ -276,17 +319,22 @@ h1 {
   margin: 1.3rem auto 0;
   max-width: 660px;
   font-size: clamp(1.15rem, 2.6vw, 1.65rem);
-  color: #7a3146;
   font-weight: 700;
   letter-spacing: 0.01em;
   opacity: 0;
-  transform: translateY(8px);
+  transform: translateY(8px) scale(0.95);
   transition: opacity 450ms ease, transform 450ms ease;
+  background: linear-gradient(120deg, #5a2b96, #e74c9f, #8b4fd5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .surprise-message.show {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateY(0) scale(1);
+  text-shadow: 0 0 30px rgba(139, 79, 213, 0.2);
+  filter: drop-shadow(0 0 12px rgba(231, 76, 159, 0.15));
 }
 
 #surprise-burst {
@@ -300,10 +348,13 @@ h1 {
   position: absolute;
   left: 50%;
   top: 52%;
-  color: rgba(136, 60, 200, 0.95);
+  color: rgba(139, 79, 213, 0.98);
   font-size: 0.95rem;
   animation: burst 1050ms ease-out forwards;
-  text-shadow: 0 8px 18px rgba(80, 30, 120, 0.18);
+  text-shadow: 
+    0 8px 18px rgba(139, 79, 213, 0.3),
+    0 0 12px rgba(139, 79, 213, 0.25);
+  filter: drop-shadow(0 0 8px rgba(231, 76, 159, 0.2));
 }
 
 .site-footer {
@@ -316,8 +367,10 @@ h1 {
 .footer-heart {
   display: inline-block;
   margin-left: 0.2rem;
-  color: #8f5dcf;
+  color: #e74c9f;
   animation: pulse-heart 1.7s ease-in-out infinite;
+  filter: drop-shadow(0 0 12px rgba(231, 76, 159, 0.4));
+  text-shadow: 0 0 16px rgba(231, 76, 159, 0.35);
 }
 
 .reveal {

@@ -94,10 +94,11 @@ function createFloatingHearts() {
 
 function randomHeartColor() {
   const palette = [
-    "rgba(155,107,216,0.95)",
-    "rgba(127,84,209,0.95)",
-    "rgba(167,126,230,0.95)",
-    "rgba(191,160,255,0.95)",
+    "rgba(139,79,213,0.96)",
+    "rgba(106,58,178,0.96)",
+    "rgba(231,76,159,0.94)",
+    "rgba(216,168,255,0.95)",
+    "rgba(175,100,220,0.95)",
   ];
   return palette[Math.floor(Math.random() * palette.length)];
 }
