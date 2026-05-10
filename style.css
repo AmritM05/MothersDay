@@ -315,15 +315,67 @@ h1 {
   color: #6b4a55;
 }
 
+.surprise-image-wrap {
+  margin: 0 auto;
+  width: min(100%, 980px);
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1.5px solid rgba(139, 79, 213, 0.35);
+  box-shadow:
+    0 16px 36px rgba(90, 43, 150, 0.28),
+    0 0 30px rgba(231, 76, 159, 0.14);
+}
+
+.surprise-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  transform: scale(1.01);
+}
+
+.surprise-caption {
+  margin: 0 auto;
+  max-width: 980px;
+  font-size: clamp(0.98rem, 1.6vw, 1.1rem);
+  color: #5e4171;
+  font-weight: 600;
+}
+
+.surprise-reveal-target {
+  opacity: 0;
+  max-height: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  transform: translateY(12px) scale(0.98);
+  transition: opacity 450ms ease, transform 450ms ease, max-height 450ms ease, margin 450ms ease;
+}
+
+.surprise-reveal-target.show {
+  opacity: 1;
+  max-height: 1200px;
+  transform: translateY(0) scale(1);
+}
+
+.surprise-image-wrap.show {
+  margin: 0 auto 1.2rem;
+}
+
+.surprise-caption.show {
+  margin: 0.85rem auto 1.1rem;
+}
+
 .surprise-message {
-  margin: 1.3rem auto 0;
+  margin: 0 auto;
   max-width: 660px;
+  max-height: 0;
+  overflow: hidden;
   font-size: clamp(1.15rem, 2.6vw, 1.65rem);
   font-weight: 700;
   letter-spacing: 0.01em;
   opacity: 0;
   transform: translateY(8px) scale(0.95);
-  transition: opacity 450ms ease, transform 450ms ease;
+  transition: opacity 450ms ease, transform 450ms ease, max-height 450ms ease, margin 450ms ease;
   background: linear-gradient(120deg, #5a2b96, #e74c9f, #8b4fd5);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -331,6 +383,8 @@ h1 {
 }
 
 .surprise-message.show {
+  margin: 1.3rem auto 0;
+  max-height: 200px;
   opacity: 1;
   transform: translateY(0) scale(1);
   text-shadow: 0 0 30px rgba(139, 79, 213, 0.2);

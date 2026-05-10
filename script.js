@@ -3,6 +3,7 @@ const messageSection = document.getElementById("message");
 const surpriseBtn = document.getElementById("surprise-btn");
 const surpriseMessage = document.getElementById("surprise-message");
 const burstContainer = document.getElementById("surprise-burst");
+const surpriseRevealTargets = document.querySelectorAll(".surprise-reveal-target");
 const floatingContainer = document.getElementById("floating-elements");
 
 // Customize animation density here if you want more or fewer floating hearts.
@@ -37,6 +38,7 @@ revealElements.forEach((el) => observer.observe(el));
 if (surpriseBtn && surpriseMessage && burstContainer) {
   surpriseBtn.addEventListener("click", () => {
     surpriseMessage.classList.add("show");
+    surpriseRevealTargets.forEach((el) => el.classList.add("show"));
     runSurpriseBurst(36);
 
     surpriseBtn.textContent = "Surprise Opened";
