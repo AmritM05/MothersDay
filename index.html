@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Happy Mother's Day</title>
+
+    <!-- Google Fonts: You can swap these for any other font pair you prefer -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header class="hero" id="top">
+      <div class="hero-overlay"></div>
+
+      <!-- Floating hearts are generated dynamically in script.js -->
+      <div id="floating-elements" aria-hidden="true"></div>
+
+      <div class="hero-content container">
+        <!-- Customize hero text below -->
+        <p class="eyebrow">For Mom</p>
+        <p>From Amrit and Srihith</p>
+        <h1>Happy Mother's Day</h1>
+        <p class="subtitle">To the world's best mom</p>
+
+        <button id="open-message" class="btn-primary" type="button">
+          Open Your Message
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <section id="message" class="section message-section">
+        <div class="container">
+          <div class="message-card reveal">
+            <p>
+              Happy mothers day! Thank you for everything you do for our family. 
+              You have always been there for us, supported us, cared
+              for us, and made our home feel special. You are the heart of our family,
+               the one who keeps us all grounded and growing. You worry everyday about
+                whether all of us are healthy or not. Your kindness and consideration
+                 for any struggles I or the family goes through is always the best! Your love,
+              patience, sacrifices, and strength mean more than words can
+              explain. I’m so grateful for you every single day.
+            </p>
+            <p>- Amrit</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="message" class="section message-section">
+        <div class="container">
+          <div class="message-card reveal">
+            <p>
+              Message here
+            </p>
+            <p>- Srihith</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="surprise" class="section surprise-section">
+        <div class="container surprise-wrap reveal">
+          <h2>One More Thing...</h2>
+          <p class="surprise-subtitle">A little surprise just for you</p>
+
+          <button id="surprise-btn" class="btn-secondary" type="button">
+            Click for a Surprise
+          </button>
+
+          <p id="surprise-message" class="surprise-message" aria-live="polite">
+            You are the heart of our family.
+          </p>
+
+          <!-- Surprise burst particles are injected here -->
+          <div id="surprise-burst" aria-hidden="true"></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>
+        Made with love for Mom
+        <span class="footer-heart" aria-hidden="true">&hearts;</span>
+      </p>
+    </footer>
+  </body>
+</html>
